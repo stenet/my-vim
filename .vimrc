@@ -27,4 +27,4 @@ xnoremap <leader>p "_dP
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
-
+colorscheme gruvbox
