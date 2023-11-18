@@ -27,3 +27,6 @@ xnoremap <leader>p "_dP
 xnoremap <leader>d "_d
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+
+nnoremap <leader>cp :r !bash ~/.vim/stef/upload.sh d<CR>
+nnoremap <leader>cc :echo system("bash ~/.vim/stef/upload.sh u " . shellescape(getreg(0)))<CR>
