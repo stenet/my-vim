@@ -1,4 +1,4 @@
-if [ ! -f ~/.vim/stef/.env ]
+if [ -f ~/.vim/stef/.env ]
 then
   export $(cat ~/.vim/stef/.env | xargs)
 fi
