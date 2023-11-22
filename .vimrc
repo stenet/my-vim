@@ -24,7 +24,7 @@ set showmatch
 set background=dark
 
 xnoremap <leader>p "_dP
-xnoremap <leader>d "_d
+nnoremap <leader>d "_dd
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
