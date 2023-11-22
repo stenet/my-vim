@@ -24,7 +24,8 @@ set showmatch
 set background=dark
 
 "Einfügen, ohne den überschriebenen Text in die primäre Zwischenablage zu schreiben
-xnoremap <leader>p "_dP
+xnoremap <leader>p "_dp
+xnoremap <leader>P "_dP
 
 "Löschen, ohne en gelöschten Text in die primäre Zwischenablage zu schreiben
 nnoremap <leader>d "_dd
