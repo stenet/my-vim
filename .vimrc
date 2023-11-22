@@ -27,6 +27,8 @@ xnoremap <leader>p "_dP
 nnoremap <leader>d "_dd
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
 
 nnoremap <leader>cp :-1r !bash ~/.vim/stef/clipboard.sh d<CR>
 nnoremap <leader>cc :echo system("bash ~/.vim/stef/clipboard.sh u " . shellescape(getreg(0)))<CR>
