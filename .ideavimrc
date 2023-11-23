@@ -49,9 +49,6 @@ nmap <leader>e4 <Action>(ExpandAllToLevel4)
 nmap <leader>e5 <Action>(ExpandAllToLevel5)
 nmap <leader>ec <Action>(ExpandCollapseToggleAction)
 
-nnoremap <leader>( $/\v(public\|private\|internal) .*\(<CR>f(:noh<CR>
-nnoremap <leader>) _?\v(public\|private\|internal) .*\(<CR>f(:noh<CR>
-
 xnoremap <leader>p "_dP
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
