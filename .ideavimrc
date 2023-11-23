@@ -1,0 +1,84 @@
+let mapleader = ","
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
+set ignorecase
+set smartcase
+set incsearch
+
+set ideajoin
+set clipboard=unnamed
+
+nmap ge <Action>(ReSharperGotoNextErrorInSolution)
+nmap gE <Action>(GotoPreviousError)
+
+nmap <c-h> <Action>(MethodUp)
+nmap <c-l> <Action>(MethodDown)
+
+map <a-k> <Action>(MoveLineUp)
+map <a-j> <Action>(MoveLineDown)
+
+nmap <c-a-h> <Action>(MoveStatementUp)
+nmap <c-a-l> <Action>(MoveStatementDown)
+
+nmap gi <Action>(GotoImplementation)
+nmap gd <Action>(GotoDeclaration)
+nmap gb <Action>(Back)
+nmap gf <Action>(Forward)
+
+nmap <leader>im <Action>(ImplementMethods)
+nmap <leader>om <Action>(OverrideMethods)
+
+nmap <leader>ne <Action>(NewElementSamePlace)
+nmap <leader>re <Action>(RenameElement)
+
+nmap <leader>gf <Action>(GotoFile)
+nmap <leader>gm <Action>(FileStructurePopup)
+nmap <leader>fu <Action>(FindUsages)
+nmap <leader>hi <Action>(ShowHoverInfo)
+nmap <leader>pi <Action>(ParameterInfo)
+nmap <leader>qa <Action>(ShowIntentionActions)
+
+nmap <leader>ff <Action>(ReformatCode)
+nmap <leader>fc <Action>(SilentCodeCleanup)
+
+nmap <leader>gb <Action>(GitNewBranchAction)
+nmap <leader>gc <Action>(GitRepositoryActions)
+nmap <leader>vc <Action>(Vcs.QuickListPopupAction)
+nmap <leader>vh <Action>(Vcs.ShowTabbedFileHistory)
+
+nmap <leader>e0 <Action>(ExpandAll)
+nmap <leader>e1 <Action>(ExpandAllToLevel1)
+nmap <leader>e2 <Action>(ExpandAllToLevel2)
+nmap <leader>e3 <Action>(ExpandAllToLevel3)
+nmap <leader>e4 <Action>(ExpandAllToLevel4)
+nmap <leader>e5 <Action>(ExpandAllToLevel5)
+nmap <leader>ec <Action>(ExpandCollapseToggleAction)
+
+nnoremap <leader>( $/\v(public\|private\|internal) .*\(<CR>f(:noh<CR>
+nnoremap <leader>) _?\v(public\|private\|internal) .*\(<CR>f(:noh<CR>
+
+xnoremap <leader>p "_dP
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+"Einfügen, ohne den überschriebenen Text in die primäre Zwischenablage zu schreiben
+xnoremap <leader>p "_dp
+xnoremap <leader>P "_dP
+
+"Löschen, ohne en gelöschten Text in die primäre Zwischenablage zu schreiben
+nnoremap <leader>d "_dd
+
+"Beim Blättern den Cursor+Text in der Mitte des Bildschirms zentrieren
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+"Neue Zeile einfügen, ohne in den Insert-Modus zu wechseln
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
+
+"Wort im Cursor suchen, ohne gleich zum nächsten Vorkommen zu springen
+nnoremap <leader>* *N
+nnoremap <leader>bp [{
+nnoremap <leader>bn ]}
