@@ -1,13 +1,9 @@
 let mapleader = ","
 
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-
 set ignorecase
 set smartcase
 set incsearch
 
-set ideajoin
 set clipboard=unnamed
 
 nmap ge <Action>(ReSharperGotoNextErrorInSolution)
@@ -26,9 +22,6 @@ nmap gi <Action>(GotoImplementation)
 nmap gd <Action>(GotoDeclaration)
 nmap gb <Action>(Back)
 nmap gf <Action>(Forward)
-
-nmap <leader>im <Action>(ImplementMethods)
-nmap <leader>om <Action>(OverrideMethods)
 
 nmap <leader>ne <Action>(NewElementSamePlace)
 nmap <leader>re <Action>(RenameElement)
