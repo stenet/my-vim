@@ -8,7 +8,7 @@ let mapleader = ","
 
 syntax on
 
-set mouse=
+set mouse=a
 set nu rnu
 set ruler
 set encoding=utf-8
