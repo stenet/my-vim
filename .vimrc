@@ -4,7 +4,7 @@ Plug 'https://tpope.io/vim/commentary.git'
 Plug 'https://github.com/morhetz/gruvbox'
 call plug#end()
 
-let mapleader = ","
+let mapleader = " "
 
 syntax on
 
@@ -38,8 +38,9 @@ nnoremap <C-u> <C-u>zz
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 
-"Wort im Cursor suchen, ohne gleich zum nächsten Vorkommen zu springen
-nnoremap <leader>* *N
+"Zwischen Fenstern wechseln
+nnoremap <S-h> <C-w>h
+nnoremap <S-l> <C-w>l
 
 nnoremap <leader>cp :-1r !bash ~/.vim/stef/clipboard.sh d<CR>
 nnoremap <leader>cc :echo system("bash ~/.vim/stef/clipboard.sh u " . shellescape(getreg(0)))<CR>
