@@ -22,6 +22,7 @@ set incsearch
 set hlsearch
 set showmatch
 set background=dark
+set wildmode=list:longest,list:full
 
 "Einfügen, ohne den überschriebenen Text in die primäre Zwischenablage zu schreiben
 xnoremap <leader>p "_dp
