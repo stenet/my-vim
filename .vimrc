@@ -40,8 +40,8 @@ nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 
 "Zwischen den Fenstern wechseln
-nnoremap (b <C-w>h
-nnoremap )b <C-w>l
+nnoremap (B <C-w>h
+nnoremap )B <C-w>l
 
 nnoremap <leader>cp :-1r !bash ~/.vim/stef/clipboard.sh d<CR>
 nnoremap <leader>cc :echo system("bash ~/.vim/stef/clipboard.sh u " . shellescape(getreg(0)))<CR>
