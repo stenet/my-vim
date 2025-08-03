@@ -35,6 +35,9 @@ nnoremap <C-l> <C-w>l
 nnoremap ö "
 vnoremap ö "
 
+"Wort löschen
+inoremap <C-z> <C-w>
+
 "Einfügen, ohne den überschriebenen Text in die primäre Zwischenablage zu schreiben
 xnoremap <leader>p "_dp
 xnoremap <leader>P "_dP
