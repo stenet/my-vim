@@ -73,8 +73,6 @@ nnoremap ga :action SelectAllOccurrences<CR>
 vnoremap ga :action SelectAllOccurrences<CR>
 nnoremap gl :action SelectNextOccurrence<CR>
 vnoremap gl :action SelectNextOccurrence<CR>
-nnoremap gt :action NextTab<CR>
-nnoremap gT :action PreviousTab<CR>
 nnoremap za :action ExpandCollapseToggleAction<CR>
 
 nnoremap <leader>aq :action ActivateAIAssistantToolWindow<CR>
@@ -146,18 +144,16 @@ nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gr :action ShowUsages<CR>
 nnoremap gR :action FindUsages<CR>
-nnoremap (F :action MethodUp<CR>
 nnoremap (( :action PreviousOccurence<CR>
 nnoremap )) :action NextOccurence<CR>
-nnoremap )F :action MethodDown<CR>
 nnoremap <C-I> :action Forward<CR>
 nnoremap <C-O> :action Back<CR>
 
 nnoremap )e :action GotoNextError<CR>
 nnoremap (e :action GotoPreviousError<CR>
 nnoremap )E :action ReSharperGotoNextErrorInSolution<CR>
-nnoremap )B :action NextTab<CR>
-nnoremap (B :action PreviousTab<CR>
+nnoremap (F :action MethodUp<CR>
+nnoremap )F :action MethodDown<CR>
 
 nnoremap g0 :action CollapseAll<CR>
 nnoremap g1 :action ExpandAllToLevel1<CR>
