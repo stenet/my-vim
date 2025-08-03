@@ -5,20 +5,16 @@ set smartcase
 set incsearch
 set scrolloff=10
 set highlightedyank
+set clipboard=unnamed
 
 inoremap jk <Esc>
 inoremap <C-s> <Esc>l:w<CR>
 nnoremap <C-s> :w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 
-nnoremap D "_D
-nnoremap S "_S
-nnoremap c "_c
-nnoremap C "_C
-nnoremap s "_s
-nnoremap x "_x
-nnoremap X "_X
-vnoremap p "_dP
+xnoremap p "_dp
+xnoremap P "_dP
+xnoremap d "_d
 nnoremap ö "
 vnoremap ö "
 
@@ -32,6 +28,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+inoremap <C-z> <C-w>
 
 nnoremap cd :action RenameElement<CR>
 
