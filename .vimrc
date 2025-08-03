@@ -24,6 +24,7 @@ set hlsearch
 set showmatch
 set background=dark
 set wildmode=list:longest,list:full
+set clipboard=unnamed
 
 "Wechsel zwischen Splits
 nnoremap <C-h> <C-w>h
@@ -43,7 +44,7 @@ xnoremap <leader>p "_dp
 xnoremap <leader>P "_dP
 
 "Löschen, ohne en gelöschten Text in die primäre Zwischenablage zu schreiben
-xnoremap <leader>d "_d
+xnoremap <leader>d "_dd
 
 "Beim Blättern den Cursor+Text in der Mitte des Bildschirms zentrieren
 nnoremap <C-d> <C-d>zz
