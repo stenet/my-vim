@@ -14,7 +14,6 @@ vnoremap <C-s> <Esc>:w<CR>
 
 xnoremap p "_dp
 xnoremap P "_dP
-xnoremap d "_d
 nnoremap ö "
 vnoremap ö "
 
@@ -88,11 +87,8 @@ nnoremap <leader>bo :action CloseAllEditorsButActive<CR>
 vnoremap <leader>bo :action CloseAllEditorsButActive<CR>
 nnoremap <leader>bd :action CloseContent<CR>
 vnoremap <leader>bd :action CloseContent<CR>
-nnoremap <leader>bn :action NextProjectWindow<CR>
-nnoremap <leader>bp :action PreviousProjectWindow<CR>
 nnoremap <leader>ba :action CloseAllEditors<CR>
-nnoremap <leader>bn :action NextProjectWindow<CR>
-nnoremap <leader>bp :action PreviousProjectWindow<CR>
+vnoremap <leader>ba :action CloseAllEditors<CR>
 nnoremap gx :action HideAllWindows<CR>:action FocusEditor<CR>
 
 nnoremap <leader>fn :action NewElement<CR>
@@ -108,8 +104,8 @@ nnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
 vnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>tu :action ActivateUnitTestsToolWindow<CR>
 vnoremap <leader>tu :action ActivateUnitTestsToolWindow<CR>
-nnoremap <leader>tb:action ActivateBuildToolWindow<CR>
-vnoremap <leader>tb:action ActivateBuildToolWindow<CR>
+nnoremap <leader>tb :action ActivateBuildToolWindow<CR>
+vnoremap <leader>tb :action ActivateBuildToolWindow<CR>
 nnoremap <leader>tn :action ActivateNuGetToolWindow<CR>
 vnoremap <leader>tn :action ActivateNuGetToolWindow<CR>
 nnoremap <leader>td :action ActivateDatabaseToolWindow<CR>
@@ -144,8 +140,6 @@ nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gr :action ShowUsages<CR>
 nnoremap gR :action FindUsages<CR>
-nnoremap (( :action PreviousOccurence<CR>
-nnoremap )) :action NextOccurence<CR>
 nnoremap <C-I> :action Forward<CR>
 nnoremap <C-O> :action Back<CR>
 
@@ -154,6 +148,8 @@ nnoremap (e :action GotoPreviousError<CR>
 nnoremap )E :action ReSharperGotoNextErrorInSolution<CR>
 nnoremap (F :action MethodUp<CR>
 nnoremap )F :action MethodDown<CR>
+nnoremap (( :action PreviousOccurence<CR>
+nnoremap )) :action NextOccurence<CR>
 
 nnoremap g0 :action CollapseAll<CR>
 nnoremap g1 :action ExpandAllToLevel1<CR>
@@ -166,11 +162,3 @@ nnoremap + :action EditorSelectWord<CR>
 vnoremap + :action EditorSelectWord<CR>
 nnoremap - :action EditorUnSelectWord<CR>
 vnoremap - :action EditorUnSelectWord<CR>
-
-nnoremap <leader>cp :action $Copy<CR><CR>
-vnoremap <leader>cp :action $Copy<CR>
-nnoremap <leader>cu :action $Cut<CR>
-vnoremap <leader>cu :action $Cut<CR>
-nnoremap <leader>pp :action $Paste<CR>
-vnoremap <leader>pp :action $Paste<CR>
-nnoremap <leader>up :action Vcs.UpdateProject<CR>
