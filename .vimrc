@@ -43,7 +43,7 @@ xnoremap <leader>p "_dp
 xnoremap <leader>P "_dP
 
 "Löschen, ohne en gelöschten Text in die primäre Zwischenablage zu schreiben
-xnoremap <leader>d "_dd
+xnoremap <leader>d "_d
 
 "Beim Blättern den Cursor+Text in der Mitte des Bildschirms zentrieren
 nnoremap <C-d> <C-d>zz
