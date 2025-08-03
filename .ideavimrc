@@ -1,74 +1,183 @@
-let mapleader = ","
+let mapleader = " "
 
 set ignorecase
 set smartcase
 set incsearch
+set scrolloff=10
+set highlightedyank
 
-set clipboard=unnamed
+inoremap jk <Esc>
+inoremap <C-s> <Esc>l:w<CR>
+nnoremap <C-s> :w<CR>
+vnoremap <C-s> <Esc>:w<CR>
 
-nmap ge <Action>(ReSharperGotoNextErrorInSolution)
-nmap gE <Action>(GotoPreviousError)
+nnoremap D "_D
+nnoremap S "_S
+nnoremap c "_c
+nnoremap C "_C
+nnoremap s "_s
+nnoremap x "_x
+nnoremap X "_X
+vnoremap p "_dP
+nnoremap ö "
+vnoremap ö "
 
-nmap <c-h> <Action>(MethodUp)
-nmap <c-l> <Action>(MethodDown)
+if &ide =~? 'rider'
+    nnoremap <leader>cR :action RiderRenameFile<CR>
+else
+    nnoremap <leader>cR :action RenameFile<CR>
+endif
 
-map <a-k> <Action>(MoveLineUp)
-map <a-j> <Action>(MoveLineDown)
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-nmap <c-a-h> <Action>(MoveStatementUp)
-nmap <c-a-l> <Action>(MoveStatementDown)
+nnoremap cd :action RenameElement<CR>
 
-nmap gi <Action>(GotoImplementation)
-nmap gd <Action>(GotoDeclaration)
-nmap gb <Action>(Back)
-nmap gf <Action>(Forward)
+nnoremap =g :action ReformatCode<CR>
+nnoremap <leader>cf :action SilentCodeCleanup<CR>
+nnoremap <leader>sg :action FindSelectionInPath<CR>
+vnoremap <leader>sg :action FindSelectionInPath<CR>
+nnoremap <leader>sj :action RecentLocations<CR>
+vnoremap <leader>sj :action RecentLocations<CR>
 
-nmap <leader>ne <Action>(NewElementSamePlace)
-nmap <leader>re <Action>(RenameElement)
+nmap s <Action>(flash.search)
+xmap s <Action>(flash.search)
+nmap f <Action>(flash.find)
+xmap f <Action>(flash.find)
+nmap F <Action>(flash.find_backward)
+xmap F <Action>(flash.find_backward)
+nmap t <Action>(flash.till)
+xmap t <Action>(flash.till)
+nmap T <Action>(flash.till_backward)
+xmap T <Action>(flash.till_backward)
+nmap ; <Action>(flash.repeat)
+xmap ; <Action>(flash.repeat)
+nmap , <Action>(flash.repeat_backward)
+xmap , <Action>(flash.repeat_backward)
 
-nmap <leader>gf <Action>(GotoFile)
-nmap <leader>gm <Action>(FileStructurePopup)
-nmap <leader>fu <Action>(FindUsages)
-nmap <leader>hi <Action>(ShowHoverInfo)
-nmap <leader>pi <Action>(ParameterInfo)
-nmap <leader>qa <Action>(ShowIntentionActions)
+vnoremap gc :action CommentByLineComment<CR>
+nnoremap gc :action CommentByLineComment<CR>
+nnoremap gC :action CommentByBlockComment<CR>
+vnoremap gC :action CommentByBlockComment<CR>
+nnoremap g; :action JumpToLastChange<Enter>
+nnoremap g, :action JumpToNextChange<Enter>
 
-nmap <leader>ff <Action>(ReformatCode)
-nmap <leader>fc <Action>(SilentCodeCleanup)
+nnoremap gf :action GotoFile<CR>
+vnoremap gf :action GotoFile<CR>
+nnoremap g. :action ShowIntentionActions<CR>
+vnoremap g. :action ShowIntentionActions<CR>
+nnoremap g: :action Generate<CR>
+vnoremap g: :action Generate<CR>
+nnoremap gs :action FileStructurePopup<CR>
+vnoremap gs :action FileStructurePopup<CR>
+nnoremap ga :action SelectAllOccurrences<CR>
+vnoremap ga :action SelectAllOccurrences<CR>
+nnoremap gl :action SelectNextOccurrence<CR>
+vnoremap gl :action SelectNextOccurrence<CR>
+nnoremap gt :action NextTab<CR>
+nnoremap gT :action PreviousTab<CR>
+nnoremap za :action ExpandCollapseToggleAction<CR>
 
-nmap <leader>gb <Action>(GitNewBranchAction)
-nmap <leader>gc <Action>(GitRepositoryActions)
-nmap <leader>vc <Action>(Vcs.QuickListPopupAction)
-nmap <leader>vh <Action>(Vcs.ShowTabbedFileHistory)
+nnoremap <leader>aq :action ActivateAIAssistantToolWindow<CR>
+vnoremap <leader>aq :action ActivateAIAssistantToolWindow<CR>
+nnoremap <leader>aa :action AIAssistant.Editor.AskAiAssistantInEditor<CR>
+vnoremap <leader>aa :action AIAssistant.Editor.AskAiAssistantInEditor<CR>
+nnoremap <leader>ai :action AIAssistant.CodeGeneration.Actions.ShowIntentionActions<CR>
+vnoremap <leader>ai :action AIAssistant.CodeGeneration.Actions.ShowIntentionActions<CR>
+nnoremap <leader>ac :action com.anthropic.code.plugin.actions.OpenClaudeInTerminalAction<CR>
+vnoremap <leader>ac :action com.anthropic.code.plugin.actions.OpenClaudeInTerminalAction<CR>
 
-nmap <leader>e0 <Action>(ExpandAll)
-nmap <leader>e1 <Action>(ExpandAllToLevel1)
-nmap <leader>e2 <Action>(ExpandAllToLevel2)
-nmap <leader>e3 <Action>(ExpandAllToLevel3)
-nmap <leader>e4 <Action>(ExpandAllToLevel4)
-nmap <leader>e5 <Action>(ExpandAllToLevel5)
-nmap <leader>ec <Action>(ExpandCollapseToggleAction)
+nnoremap <leader>bo :action CloseAllEditorsButActive<CR>
+vnoremap <leader>bo :action CloseAllEditorsButActive<CR>
+nnoremap <leader>bd :action CloseContent<CR>
+vnoremap <leader>bd :action CloseContent<CR>
+nnoremap <leader>bn :action NextProjectWindow<CR>
+nnoremap <leader>bp :action PreviousProjectWindow<CR>
+nnoremap <leader>ba :action CloseAllEditors<CR>
+nnoremap <leader>bn :action NextProjectWindow<CR>
+nnoremap <leader>bp :action PreviousProjectWindow<CR>
+nnoremap gx :action HideAllWindows<CR>:action FocusEditor<CR>
 
-xnoremap <leader>p "_dP
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+nnoremap <leader>fn :action NewElement<CR>
+vnoremap <leader>fn :action NewElement<CR>
+nnoremap <leader>fs :action SelectIn<CR>
+vnoremap <leader>fs :action SelectIn<CR>
+nnoremap <leader>fr :action RecentFiles<CR>
+vnoremap <leader>fr :action RecentFiles<CR>
+nnoremap <leader>, :action Switcher<CR>
+vnoremap <leader>, :action Switcher<CR>
 
-"Einfügen, ohne den überschriebenen Text in die primäre Zwischenablage zu schreiben
-xnoremap <leader>p "_dp
-xnoremap <leader>P "_dP
+nnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
+vnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>tu :action ActivateUnitTestsToolWindow<CR>
+vnoremap <leader>tu :action ActivateUnitTestsToolWindow<CR>
+nnoremap <leader>tb:action ActivateBuildToolWindow<CR>
+vnoremap <leader>tb:action ActivateBuildToolWindow<CR>
+nnoremap <leader>tn :action ActivateNuGetToolWindow<CR>
+vnoremap <leader>tn :action ActivateNuGetToolWindow<CR>
+nnoremap <leader>td :action ActivateDatabaseToolWindow<CR>
+vnoremap <leader>td :action ActivateDatabaseToolWindow<CR>
+nnoremap <leader>tg :action ActivateCommitToolWindow<CR>
+vnoremap <leader>tg :action ActivateCommitToolWindow<CR>
+nnoremap <leader>ts :action ActivateServicesToolWindow<CR>
+vnoremap <leader>ts :action ActivateServicesToolWindow<CR>
+nnoremap <leader>tr :action ActivateDebugToolWindow<CR>
+vnoremap <leader>tr :action ActivateDebugToolWindow<CR>
+nnoremap <leader>tv :action ActivateVersionControlToolWindow<CR>
+vnoremap <leader>tv :action ActivateVersionControlToolWindow<CR>
+nnoremap <leader>te :action ActivateTestsToolWindow<CR>
+vnoremap <leader>te :action ActivateTestsToolWindow<CR>
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+vnoremap <leader>e :action ActivateProjectToolWindow<CR>
 
-"Löschen, ohne en gelöschten Text in die primäre Zwischenablage zu schreiben
-nnoremap <leader>d "_dd
+nnoremap ,r :action Run<CR>
+vnoremap ,r :action Run<CR>
+nnoremap ,d :action Debug<CR>
+vnoremap ,d :action Debug<CR>
+nnoremap ,s :action Stop<CR>
+vnoremap ,s :action Stop<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,n :action ActivateDebugToolWindow<CR>
+nnoremap ,R :action Resume<CR>
+vnoremap ,R :action Resume<CR>
+nnoremap <F10> :action StepOver<CR>
+nnoremap <F11> :action StepInto<CR>
 
-"Beim Blättern den Cursor+Text in der Mitte des Bildschirms zentrieren
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gr :action ShowUsages<CR>
+nnoremap gR :action FindUsages<CR>
+nnoremap (F :action MethodUp<CR>
+nnoremap (( :action PreviousOccurence<CR>
+nnoremap )) :action NextOccurence<CR>
+nnoremap )F :action MethodDown<CR>
+nnoremap <C-I> :action Forward<CR>
+nnoremap <C-O> :action Back<CR>
 
-"Neue Zeile einfügen, ohne in den Insert-Modus zu wechseln
-nnoremap <leader>o o<Esc>
-nnoremap <leader>O O<Esc>
+nnoremap )e :action GotoNextError<CR>
+nnoremap (e :action GotoPreviousError<CR>
+nnoremap )E :action ReSharperGotoNextErrorInSolution<CR>
+nnoremap )B :action NextTab<CR>
+nnoremap (B :action PreviousTab<CR>
 
-"Wort im Cursor suchen, ohne gleich zum nächsten Vorkommen zu springen
-nnoremap <leader>* *N
-nnoremap <leader>bp [{
-nnoremap <leader>bn ]}
+nnoremap g0 :action CollapseAll<CR>
+nnoremap g1 :action ExpandAllToLevel1<CR>
+nnoremap g2 :action ExpandAllToLevel2<CR>
+nnoremap g3 :action ExpandAllToLevel3<CR>
+nnoremap g4 :action ExpandAllToLevel4<CR>
+nnoremap g5 :action ExpandAllToLevel5<CR>
+
+nnoremap + :action EditorSelectWord<CR>
+vnoremap + :action EditorSelectWord<CR>
+nnoremap - :action EditorUnSelectWord<CR>
+vnoremap - :action EditorUnSelectWord<CR>
+
+nnoremap <leader>cp :action $Copy<CR><CR>
+vnoremap <leader>cp :action $Copy<CR>
+nnoremap <leader>cu :action $Cut<CR>
+vnoremap <leader>cu :action $Cut<CR>
+nnoremap <leader>pp :action $Paste<CR>
+vnoremap <leader>pp :action $Paste<CR>
+nnoremap <leader>up :action Vcs.UpdateProject<CR>
