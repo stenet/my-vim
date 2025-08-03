@@ -31,12 +31,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"Wort löschen
+inoremap <C-z> <C-w>
+
 "Mapping ö auf " für Register
 nnoremap ö "
 vnoremap ö "
-
-"Wort löschen
-inoremap <C-z> <C-w>
 
 "Einfügen, ohne den überschriebenen Text in die primäre Zwischenablage zu schreiben
 xnoremap <leader>p "_dp
