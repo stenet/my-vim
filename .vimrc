@@ -32,9 +32,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap º :.m +1<CR>==
+nnoremap º :.m +1<CR>
 vnoremap º :m '>+1<CR>gv
-nnoremap ∆ :.m -2<CR>==
+nnoremap ∆ :.m -2<CR>
 vnoremap ∆ :m '<-2<CR>gv
 
 "Wort löschen
